@@ -26,10 +26,14 @@ if  (!isset($_SESSION["session_username"])) {
 	  	<link rel="stylesheet" href="static/css/style.css">
 	   	<link rel="stylesheet" type="text/css" href="static/css/slick.css">
 		<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
-	   	<script src="https://api-maps.yandex.ru/2.1/?apikey=<6a57fb75-3212-43de-8b69-55c65eeff611>&lang=ru_RU" type="text/javascript"></script>
+	   	<script src="https://api-maps.yandex.ru/2.1/?apikey=<<?= $config['ya_api_key']; ?>>&lang=ru_RU" type="text/javascript"></script>
 		<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 		<script src="static/js/slick.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="static/js/scripts.js" type="text/javascript"></script>
+		
+		<script>
+			var token = '<?= session_id(); ?>';
+		</script>
 
 	</head>
 

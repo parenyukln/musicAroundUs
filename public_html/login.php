@@ -29,7 +29,8 @@ if (isset($_POST["login"])) {
                 //  session_start();
               
                 $_SESSION['session_username']=$username;
-
+                $ses_id = session_id();
+				$insertQuery = mysqli_query($link, "UPDATE users SET token='".$ses_id."' WHERE login='".$username."'");
                 /* Перенаправление браузера */
                 header("Location: index.php");  
             }
