@@ -2,13 +2,14 @@
 ymaps.ready(init);
 
 function init() {
-	var myMap = new ymaps.Map("yandex_map", {
+	myMap = new ymaps.Map("yandex_map", {
 	    center: [55.792372, 49.122292],
 	    zoom: 16
 	});
-	// Отображение меток на карте
+	
+	/* Тестовые данные
 	myMap.geoObjects
-	      
+  
 	.add(new ymaps.Placemark([55.792372, 49.122292], {
 	    iconCaption: 'Макс Корж - Жить в кайф'
 	    }, {
@@ -29,11 +30,16 @@ function init() {
 		}, {
 	    preset: 'islands#nightDotIconWithCaption'
 	}));
+	*/
+	
+	// Достаем данные с БД
+	getItemsFromDb();
 }
 
-//прокрутка слайдера
-
 $(document).on('ready', function() {
+	var myMap;
+	
+	//прокрутка слайдера
 	if(window.matchMedia('(max-width: 600px)').matches){
 		$(".autoplay").slick({
 			infinite: true,
@@ -61,3 +67,25 @@ $(document).on('ready', function() {
 			}); 
 	}
 });
+
+function getItemsFromDb() {
+	$.ajax({
+		url: `http://cl18599.tmweb.ru/api/get_history.php?min_lon=1&min_lat=1&max_lon=1000&max_lat=1000&token=${token}&get_history=1`,
+		success: function(res) {
+			if ( res && typeof res['error_code'] == 'undefined' ) {
+				let usersArray = res;
+				usersArray.forEach( user => {
+					myMap.geoObjects
+					.add(new ymaps.Placemark([user['lat'], user['lon']], {
+					    iconCaption: `${user['author']} - ${user['title']}`
+					    }, {
+					    preset: 'islands#nightDotIconWithCaption'
+					}));
+				});
+			}
+		},
+		error: function() {
+			
+		}
+	});
+}
