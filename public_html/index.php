@@ -14,6 +14,11 @@ if  (!isset($_SESSION["session_username"])) {
   $city = $response["city"]["name_ru"];
   $lat = $response["city"]["lat"];
   $lon = $response["city"]["lon"];
+  $token = session_id();
+  
+  // Достаем юзеров
+  $request_url = "http://cl18599.tmweb.ru/api/get_history.php?min_lon=1&min_lat=1&max_lon=1000&max_lat=1000&token=".$token."&get_history=1";
+  $usersArray = json_decode(file_get_contents($request_url), TRUE);
 ?>
 	
 <!DOCTYPE html>
@@ -32,7 +37,7 @@ if  (!isset($_SESSION["session_username"])) {
 		<script src="static/js/scripts.js" type="text/javascript"></script>
 		
 		<script>
-			var token = '<?= session_id(); ?>';
+			var token = '<?= $token; ?>';
 		</script>
 
 	</head>
@@ -108,6 +113,19 @@ if  (!isset($_SESSION["session_username"])) {
 							<p>Ellie Goulding - Close To Me</p>
 						</div>
 				    </div>
+				    <?php 
+						foreach ($usersArray as $one_user) {
+					?>
+						<div class="user_box">
+					        <img src="static/images/person_1.png" alt="<?= $one_user['login']; ?>" title="Пользователь слушает сейчас">
+					        <div>
+					        	<h4><?= $one_user['login']; ?></h4>
+					        	<p><?= $one_user['author']; ?> - <?= $one_user['title']; ?></p>
+					    	</div>
+					    </div>
+					<?php
+						}
+					?>
 			  	</section>
 			</div>
 		</content>
