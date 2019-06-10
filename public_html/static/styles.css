@@ -1,0 +1,248 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.size-1 {
+    font-size: 100px;
+    font-family: Candara;
+}
+.size-2 {
+    font-size: 24px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.size-3 {
+    font-size: 28px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Start Header */
+body {
+    background-image:url("images/dark-blue-bg.jpg"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header h2 {
+    text-transform: uppercase;
+    font-weight: bold;
+
+    font-size: 250px;
+    color: rgb(240, 13, 13);
+    
+
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+header .user-menu {
+    width: 15%;
+    position: absolute;
+    top: 10%;
+    right: 5%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    /* border: 3px solid red; */
+}
+header .user-menu .log-out {
+    border: 3px solid rgb(255, 3, 3);
+    border-radius: 10px; 
+    background-color: red;
+    padding: 10px 25px;
+}
+header .user-menu .log-out a {
+    color: white;
+    text-decoration: none;
+    font-size:20px;
+    font-family: 'Roboto', sans-serif;
+}
+header .user-menu .user-name {
+    color: white;
+    font-size:20px;
+    letter-spacing: 1px;
+    font-family: 'Roboto', sans-serif;
+}
+/* End Header */
+
+/* Start Content*/
+/* Start - Aside menu */
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.form-group label {
+  color: white;
+}
+.control-panel {
+    width: 20%;
+    height: 100%;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    /* border: 3px solid blue; */
+}
+
+.log-out:hover {
+  transform: scale(1.1);
+}
+
+.log-out {
+  transition: .5s;
+}
+
+.add-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+
+    margin-top: 50px; 
+
+    /* border: 3px solid green; */
+}
+.add-button p {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}
+.add-film img {
+    width: 150px;
+}
+.image-bg {
+    background: white;
+    border-radius: 50%;
+}
+
+/* End - Aside menu */
+
+/* Start - Films Table */
+ 
+.module-border-wrap { 
+    background: linear-gradient(to right, red, purple);
+    padding: 10px;
+} 
+.module {
+     
+}
+
+form {
+  margin-top: 60px;
+}
+
+.films-table {
+    width: 75%;
+    height: auto;
+    padding: 50px 30px 30px 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:  wrap;
+
+    /* border: 3px solid yellow; */
+}
+.film-container {
+
+    width: 30%;
+    min-width: 300px;
+    height: 700px;
+    margin-bottom: 30px;
+
+    overflow: hidden;
+    /* padding: 0px 10px 0px 10px; */
+    
+    /* border: 3px solid red; */
+}
+
+
+.inner-img {
+    transition: 0.3s;
+}
+.inner-img:hover {
+    transform: scale(1.1);
+}
+
+  
+
+.film-container img {
+    width: 100%;
+    min-width: 300px;
+    max-height:600px;
+}
+.film-container h4 {
+    text-align: center;
+
+}
+
+.container {
+    width: 30%;
+    margin-top: 20px;
+}
+
+.btn {
+  background-color: #18132B;  
+}
+
+@media (max-width: 1250px) {
+    .size-1 {
+        font-size: 90px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .size-2 {
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .size-3 {
+        font-size: 24px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .add-film img {
+        width: 100%;
+        min-width: 150px;
+        max-height:400px;
+    }
+    .film-container {
+        width: 45%;
+        min-width: 250px;
+        height: 700px;
+        margin-bottom: 20px;
+        /* padding: 0px 10px 0px 10px; */
+        
+    }
+}
+
+@media (max-width: 900px) {
+    .size-1 {
+        font-size: 70px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .size-2 {
+        font-size: 12px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .size-3 {
+        font-size: 16px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .add-film img {
+        width: 60px;
+    }
+    .film-container {
+        margin-bottom:15px;
+        padding: 0px 10px 0px 10px;
+    
+    }
+}

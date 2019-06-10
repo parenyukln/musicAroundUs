@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+body {
+	margin: 0px;
+	font-family: 'Montserrat', sans-serif;
+	background-color: black;
+}
+
+h1, h2, h4, p {
+	color: white;
+}
+
+nav, footer{
+	background-color: #070707;
+}
+
+nav {
+	width: 100%;
+  	height: 12vh;
+  	margin: auto;
+  	list-style: none; 
+	opacity: .9;
+	position: fixed;
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-right: 
+}
+
+
+.menu {
+  	display: -webkit-box;
+  	display: -ms-flexbox;
+  	display: flex;
+  	-webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: flex-end;
+  	-webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: flex-end;
+}
+
+.menu li {
+
+  	-webkit-transition: background-position-x 0.9s linear;
+  	transition: background-position-x 0.9s linear;
+  	text-align: center;
+  	list-style-type: none;
+}
+
+.menu li a {
+  	font-size: 20px;
+  	color: #EAE5FF;
+  	text-decoration: none;
+  	-webkit-transition: all 0.45s;
+  	transition: all 0.45s;
+}
+.menu li:hover {
+  	background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEi%0D%0AIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhs%0D%0AaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCIKCSB3aWR0%0D%0AaD0iMzkwcHgiIGhlaWdodD0iNTBweCIgdmlld0JveD0iMCAwIDM5MCA1MCIgZW5hYmxlLWJhY2tn%0D%0Acm91bmQ9Im5ldyAwIDAgMzkwIDUwIiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHBhdGggZmlsbD0i%0D%0Abm9uZSIgc3Ryb2tlPSIjZDk0ZjVjIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLW1pdGVybGlt%0D%0AaXQ9IjEwIiBkPSJNMCw0Ny41ODVjMCwwLDk3LjUsMCwxMzAsMAoJYzEzLjc1LDAsMjguNzQtMzgu%0D%0ANzc4LDQ2LjE2OC0xOS40MTZDMTkyLjY2OSw0Ni41LDI0My42MDMsNDcuNTg1LDI2MCw0Ny41ODVj%0D%0AMzEuODIxLDAsMTMwLDAsMTMwLDAiLz4KPC9zdmc+Cg==");
+  	-webkit-animation: line 2s;
+    animation: line 2s;
+}
+.menu li:hover a {
+  	color: #d94f5c;
+}
+.menu li:not(:last-child) {
+  	margin-right: 30px;
+}
+
+@-webkit-keyframes line {
+  	0% {
+    	background-position-x: 400px;
+  	}
+}
+
+@keyframes line {
+  	0% {
+    	background-position-x: 400px;
+  	}
+}
+
+.site_description {
+	background-image: url(../images/background.png);
+	background-size: cover;
+	height: 70vh;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+}
+
+.text_description {
+    width: 90%;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.map {
+	margin-top: 40px;
+	color: white;
+	text-align: center;	
+}
+
+#yandex_map {
+    z-index: 1000;
+    width: 100%; 
+    height: 50vh; 
+    margin-top: 30px; 
+    margin-bottom: 40px;
+}
+
+[class*="ymaps-2"][class*="-ground-pane"] {
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+	-webkit-filter: grayscale(100%) brightness(15%);
+}
+
+.user_slider h2 {
+	text-align: center;
+}
+
+
+.slider {
+    width: 100%;
+
+}
+
+.slick-slide {
+    margin: 0 6vh;
+}
+
+.slick-slide img {
+    width: 18%;
+    float: left;
+	margin: 6%;
+	border-radius: 10vh; /* Радиус скругления */
+    border: 1vh grey; /* Параметры рамки */
+    box-shadow: 0 0 2vh #666; /* Параметры тени */
+}
+
+.slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: .2;
+}
+
+.slick-active {
+    opacity: .5;
+}
+
+.slick-current {
+    opacity: 1;
+}
+
+
+footer {
+	height: 8vh;
+	margin-top: 6vh;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 680px) {
+    nav {
+        display: -webkit-flex;
+		-webkit-flex-flow: row wrap;
+		-webkit-align-content: flex-end; 
+		display: flex;
+		justify-content: space-around;
+		align-content: center;
+		height: 12vh;
+    }
+}
+
+@media (min-width: 768px) {
+	.logo {
+		margin-left: 8vh;
+	}
+	.menu li {
+		width: 140px;
+  		height: 50px;
+  		margin-top: 4vh;
+  		margin-right: 12vh;
+	}
+}
+
