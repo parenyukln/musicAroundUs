@@ -7,5 +7,5 @@
 $config = [
     'user_name' => 'admin',
     'db' => 'mysql',
-    'ya_api_key' => '7a2b1b6d-9e9d-490a-b0dc-7a9c2e1e3be1'
+    'ya_api_key' => '6a57fb75-3212-43de-8b69-55c65eeff611'
 ];
